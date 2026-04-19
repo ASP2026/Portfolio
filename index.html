@@ -7,109 +7,136 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
     }
-    /* Menu fixo */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       background-color: #4CAF50;
       color: white;
-      display: flex;
-      justify-content: center;
-      padding: 10px 0;
-      z-index: 1000;
-    }
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 20px;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    header {
-      text-align: center;
-      padding: 100px 20px 20px; /* espaço extra por causa do menu fixo */
-      background-color: #f0f0f0;
+      padding: 30px;
+      flex-wrap: wrap; /* responsivo */
     }
     header img {
-      width: 160px;
+      width: 120px;
       margin-bottom: 10px;
     }
+    header div {
+      text-align: right;
+      flex: 1;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.2em;
+    }
+    header p {
+      margin: 5px 0;
+    }
     section {
-      padding: 40px 20px;
+      padding: 40px;
       max-width: 900px;
       margin: auto;
     }
     h2 {
       color: #4CAF50;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 10px;
+    }
+    /* Estilo das cards */
+    .card {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin: 20px 0;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #4CAF50;
     }
     footer {
+      background-color: #333;
+      color: white;
       text-align: center;
-      padding: 15px;
-      background-color: #f0f0f0;
-      font-size: 0.9em;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #4CAF50;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <!-- Menu fixo -->
-  <nav>
-    <ul>
-      <li><a href="#sobre">Sobre Mim</a></li>
-      <li><a href="#publicacoes">Publicações</a></li>
-      <li><a href="#projetos">Projetos</a></li>
-      <li><a href="#contato">Contato</a></li>
-    </ul>
-  </nav>
-
+  <!-- Cabeçalho com logo à esquerda e texto à direita -->
   <header>
-    <img src="logo.png" alt="Logo Amanda Possamai">
-    <h1>Portfólio de Amanda Possamai</h1>
-    <p>Finanças • Tecnologia • Inovação</p>
-    <p><em>Transformando dados em soluções práticas e criativas</em></p>
+    <div>
+      <img src="logo.png" alt="Logo Amanda Possamai">
+    </div>
+    <div>
+      <h1>Portfólio de Amanda Possamai</h1>
+      <p>Finanças • Tecnologia • Inovação</p>
+      <p><em>Transformando dados em soluções práticas e criativas</em></p>
+    </div>
   </header>
 
-  <section id="sobre">
+  <!-- Seção Sobre Mim -->
+  <section>
     <h2>Sobre Mim</h2>
-    <p>Olá! Sou Amanda Possamai, apaixonada por finanças, tecnologia e inovação...</p>
+    <p>
+      Sou Amanda Possamai e acredito que números contam histórias. 
+      Transformo dados em insights criativos, unindo Finanças, Tecnologia e Inovação 
+      para construir soluções que fazem diferença no dia a dia e inspiram novas ideias.
+    </p>
   </section>
 
-  <section id="publicacoes">
-    <h2>📖 Publicações Destacadas</h2>
-    <h3>Estudo de Caso: Da Mentoria à Tecnologia</h3>
-    <p><strong>Contexto:</strong> ...</p>
-    <p><strong>Ação:</strong> ...</p>
-    <p><strong>Resultado:</strong> ...</p>
+  <!-- Seção Estudo de Caso -->
+  <section>
+    <h2>Estudo de Caso</h2>
+    <p><strong>Contexto:</strong> Desafio em análise de dados financeiros.<br>
+       <strong>Ação:</strong> Criação de dashboards interativos.<br>
+       <strong>Resultado:</strong> Redução de 20% no tempo de tomada de decisão.</p>
   </section>
 
-  <section id="projetos">
-    <h2>🚀 Projetos em Desenvolvimento</h2>
-    <ul>
-      <li>Automação de Processos Financeiros</li>
-      <li>Dashboard de Análise de Dados</li>
-      <li>Integração entre Mentoria e Tecnologia</li>
-    </ul>
+  <!-- Seção Projetos com cards -->
+  <section>
+    <h2>Meus Projetos</h2>
+
+    <div class="card">
+      <h3>Automação Financeira</h3>
+      <p>Scripts criados para otimizar relatórios e reduzir tempo de análise em processos financeiros.</p>
+    </div>
+
+    <div class="card">
+      <h3>Análise de Dados</h3>
+      <p>Modelos preditivos aplicados a investimentos, com dashboards interativos para tomada de decisão.</p>
+    </div>
+
+    <div class="card">
+      <h3>Inovação Tech</h3>
+      <p>Protótipos de soluções digitais voltados para inovação em processos corporativos.</p>
+    </div>
   </section>
 
-  <section id="contato">
-    <h2>🌐 Conecte-se Comigo</h2>
-    <p><a href="https://www.linkedin.com/in/amanda-serpa-possamai">LinkedIn</a> • <a href="https://web.dio.me">DIO</a></p>
-  </section>
-
+  <!-- Rodapé -->
   <footer>
     <p>© 2026 Amanda Possamai - Todos os direitos reservados</p>
+    <p>
+      <a href="mailto:seuemail@gmail.com">Email</a> | 
+      <a href="https://github.com/ASP2026">GitHub</a> | 
+      <a href="https://www.linkedin.com/in/amanda-serpa-possamai">LinkedIn</a>
+    </p>
   </footer>
 </body>
 </html>
